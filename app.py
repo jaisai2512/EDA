@@ -6,4 +6,3 @@ data = pd.read_csv('mtcars.csv')
 summary = Rules.extract_data(data)
 
 
-
