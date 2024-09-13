@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 
 # Title of the Streamlit app
-st.title("CSV File Uploader")
+st.title("EDA Report Generator")
 
 # File uploader widget
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
