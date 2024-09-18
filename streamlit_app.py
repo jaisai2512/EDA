@@ -28,7 +28,7 @@ if uploaded_file is not None:
     
   Here is the dictionary for analysis:{summary}
     '''
-    prompt_qa = f'''You are a data analyst with expertise in interpreting data summaries and generating questions for visualizations. Please adhere to the following instructions:
+    prompt_qa = f'''You are a data analyst with expertise in interpreting data summaries and generating insightful questions to identify patterns in data. Use visualizations to support your analysis and provide meaningful interpretations of the trends. Please adhere to the following instructions:
 
 1. Do not generate any code.
 2. Do not generate tabular columns.
