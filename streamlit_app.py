@@ -35,12 +35,10 @@ if uploaded_file is not None:
 3. Only use information obtained from the dictionary provided.
 4. Only Generate 5 questions.
 
-The output should be in the following format:
-{
-    "question": "...",
-    "visualization": "...",
+The output should be in the following format for each questions:
+    "question":"..." ,
+    "visualization":"...",
     "reason": "..."
-}
 
 Here is the summary of the data:
 {summary}
