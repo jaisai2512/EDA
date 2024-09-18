@@ -37,10 +37,11 @@ if uploaded_file is not None:
 5. The visualization should be a single graph, not a combination or multiple graphs.
 
 The output should be in the following format for each questions:
+```json
     "question":"..." ,
     "visualization":"...",
     "reason": "..."
-
+```
 Here is the summary of the data:
 {summary}
 '''
