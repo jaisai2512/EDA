@@ -36,12 +36,16 @@ if uploaded_file is not None:
 4. Only Generate 5 questions.
 5. The visualization should be a single graph, not a combination or multiple graphs.
 
-The output should be in the following format for each questions:
-```json
-    "question":"..." ,
-    "visualization":"...",
-    "reason": "..."
-```
+The output should be in valid JSON format as follows:
+
+[
+    {{
+        "question": "...",
+        "visualization": "...",
+        "reason": "..."
+    }},
+    ...
+]
 Here is the summary of the data:
 {summary}
 '''
