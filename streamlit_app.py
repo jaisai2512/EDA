@@ -33,6 +33,7 @@ if uploaded_file is not None:
 1. Do not generate any code.
 2. Do not generate tabular columns.
 3. Only use information obtained from the dictionary provided.
+4. Only Generate 5 questions.
 
 The output should be in the following format:
 {
@@ -47,7 +48,7 @@ Here is the summary of the data:
 
     # Display basic information about the CSV
     st.write("Basic Information:")
-    st.write(api(prompt))
+    st.write(api(prompt_qa))
 else:
     st.write("Please upload a CSV file to proceed.")
 
