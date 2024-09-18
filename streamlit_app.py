@@ -28,6 +28,22 @@ if uploaded_file is not None:
     
   Here is the dictionary for analysis:{summary}
     '''
+    prompt_qa = f'''You are a data analyst with expertise in interpreting data summaries and generating questions for visualizations. Please adhere to the following instructions:
+
+1. Do not generate any code.
+2. Do not generate tabular columns.
+3. Only use information obtained from the dictionary provided.
+
+The output should be in the following format:
+{
+    "question": "...",
+    "visualization": "...",
+    "reason": "..."
+}
+
+Here is the summary of the data:
+{summary}
+'''
 
     # Display basic information about the CSV
     st.write("Basic Information:")
