@@ -2,6 +2,7 @@ import Rules
 from API import api
 import streamlit as st
 import pandas as pd
+import json
 
 # Title of the Streamlit app
 st.title("EDA Report Generator")
@@ -52,7 +53,8 @@ Here is the summary of the data:
 
     # Display basic information about the CSV
     st.write("Basic Information:")
-    st.write(api(prompt_qa))
+    data = json.loads(api(prompt_qa))
+    st.write(data)
 else:
     st.write("Please upload a CSV file to proceed.")
 
