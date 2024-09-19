@@ -52,7 +52,10 @@ Here is the summary of the data:
 
     # Display basic information about the CSV
     st.write("Basic Information:")
-    st.write(api(prompt_qa))
+    ###st.write(api(prompt_qa))
+    for i in prompt_qa:
+        st.write(api(i))
+        break
 else:
     st.write("Please upload a CSV file to proceed.")
 
