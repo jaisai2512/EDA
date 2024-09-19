@@ -54,7 +54,7 @@ Here is the summary of the data:
     st.write("Basic Information:")
     ###st.write(api(prompt_qa))
     for i in api(prompt_qa):
-        st.write(api(i))
+        st.write(i)
         break
 else:
     st.write("Please upload a CSV file to proceed.")
