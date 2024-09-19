@@ -41,9 +41,9 @@ The output should be in valid JSON format as follows:
 
 {{
     {{
-        "question": "...",
-        "visualization": "...",
-        "reason": "..."
+        'question': '...',
+        'visualization': '...',
+        'reason': '...'
     }},
     ...
 }}
