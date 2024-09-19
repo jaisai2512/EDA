@@ -38,14 +38,14 @@ if uploaded_file is not None:
 
 The output should be in valid JSON format as follows:
 
-
+{
     {{
         "question": "...",
         "visualization": "...",
         "reason": "..."
     }},
     ...
-
+}
 Here is the summary of the data:
 {summary}
 '''
