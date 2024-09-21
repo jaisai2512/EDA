@@ -90,8 +90,8 @@ Please generate the Seaborn code according to the guidelines above.
          generated_code = api(prompt_vis)
          st.code(generated_code,language='Python')
          plot_buffer = exec(generated_code,var_dict)
-       if plot_buffer:
-        st.image(plot_buffer, caption="Age Chart", use_column_width=True)
+        if plot_buffer:
+         st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
     st.write("Please upload a CSV file to proceed.")
 
