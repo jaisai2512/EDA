@@ -78,7 +78,7 @@ Summary of the data:
 Please generate the Seaborn code according to the guidelines above.
 '''     
         full_code = inject_variables(api(prompt_vis),var_dict)
-        st.write(full_code))
+        st.write(full_code)
         break
 else:
     st.write("Please upload a CSV file to proceed.")
