@@ -82,6 +82,17 @@ Summary of the data:
 “”"
 {summary}
 “”"
+The visualization code should be generated in the <<stub>> part in the below code.
+
+def plot_and_save(df):
+    
+    <<stub>>
+    # Save the figure to a buffer instead of a file
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)  # Move the cursor to the start of the stream
+    return buf
+
 
 Please generate the Seaborn code according to the guidelines above.
 '''     
@@ -89,10 +100,12 @@ Please generate the Seaborn code according to the guidelines above.
         with st.spinner("Executing code..."):
          generated_code = api(prompt_vis)
          st.code(generated_code,language='Python')
-         plot_buffer = exec(generated_code.replace('```python','').replace('```',''),var_dict)
-        if plot_buffer:
-         st.image(plot_buffer, caption="Age Chart", use_column_width=True)
-        break
+         local_vars = {}
+         exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
+         plot_and_save = local_vars['plot_and_save']  
+         plot_buffer = plot_and_save(df)  
+       if plot_buffer:
+        st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
     st.write("Please upload a CSV file to proceed.")
 
