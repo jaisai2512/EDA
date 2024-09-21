@@ -104,8 +104,8 @@ Please generate the Seaborn code according to the guidelines above.
          exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
          plot_and_save = local_vars['plot_and_save']  
          plot_buffer = plot_and_save(df)  
-       if plot_buffer:
-        st.image(plot_buffer, caption="Age Chart", use_column_width=True)
+        if plot_buffer:
+         st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
     st.write("Please upload a CSV file to proceed.")
 
