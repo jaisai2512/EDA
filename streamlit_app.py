@@ -89,7 +89,7 @@ Please generate the Seaborn code according to the guidelines above.
         with st.spinner("Executing code..."):
          generated_code = api(prompt_vis)
          st.code(generated_code,language='Python')
-         plot_buffer = exec(generated_code,var_dict)
+         plot_buffer = exec(generated_code.replace('```python','').replace('```',''),var_dict)
         if plot_buffer:
          st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
