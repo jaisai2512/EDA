@@ -65,7 +65,6 @@ Instructions:
     1.Use only Seaborn for visualization.
     2.The data is provided in a DataFrame named df.
     3.Generate Python code only, without explanations.
-    4.Save the graph as an image named output.png in a temporary directory and written the path of the directory.
 Here are the details:
 
 Question, visualization, and reason:
