@@ -4,7 +4,9 @@ import streamlit as st
 import pandas as pd
 import json
 from execute import execute_code_safely
-
+import seaborn as sns
+import matplotlib as plt 
+import io
 
  
 # Title of the Streamlit app
