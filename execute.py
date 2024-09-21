@@ -1,3 +1,5 @@
+import tempfile
+import os
 def execute_code_safely(code,var_dict):
         try:
             # Execute the code in a subprocess
