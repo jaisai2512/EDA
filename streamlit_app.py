@@ -3,8 +3,10 @@ from API import api
 import streamlit as st
 import pandas as pd
 import json
-from Inject import inject_variables
+from execute import execute_code_safely
 
+
+ 
 # Title of the Streamlit app
 st.title("EDA Report Generator")
 
@@ -78,8 +80,15 @@ Summary of the data:
 
 Please generate the Seaborn code according to the guidelines above.
 '''     
-        full_code = inject_variables(api(prompt_vis),var_dict)
-        st.write(full_code)
+
+        with st.spinner("Executing code..."):
+            image_data, error = execute_code_safely(api(prompt_vis),var_dict)
+        if image_data:
+            st.subheader("Execution Output")
+            st.image(image_data, caption="Generated Seaborn Plot")
+        else:
+            st.subheader("Error")
+            st.error(error)
         break
 else:
     st.write("Please upload a CSV file to proceed.")
