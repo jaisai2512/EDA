@@ -4,4 +4,4 @@ openai
 seaborn
 matplotlib
 temp
-os
+os-sys
