@@ -4,3 +4,4 @@ openai
 seaborn
 matplotlib
 tempfile
+os
