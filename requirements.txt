@@ -1,4 +1,5 @@
 pandas
 streamlit
 openai
-
+seaborn
+matplotlib
