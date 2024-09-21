@@ -8,7 +8,7 @@ def execute_code_safely(code,var_dict):
             with tempfile.TemporaryDirectory() as tmp_dir:
               var_dict['tmp_dir'] = tmp_dir
               result = exec(code.replace('```python','').replace('```',''),var_dict)
-              output_image_path = '/mount/src/eda/tmp_dir/output.png'
+              output_image_path = f"/mount/src/eda/{tmp_dir}/output.png"
               if os.path.exists(output_image_path):
                 with open(output_image_path, 'rb') as img_file:
                   image_data = img_file.read()
