@@ -3,6 +3,7 @@ from API import api
 import streamlit as st
 import pandas as pd
 import json
+from inject import inject_variables
 
 # Title of the Streamlit app
 st.title("EDA Report Generator")
@@ -19,6 +20,7 @@ if uploaded_file is not None:
     st.write("Summary of the CSV file:")
     summary = Rules.extract_data(df)
 
+    var_dict = {'df':df}
 
     prompt = f'''You are a data analyst with expertise in data interpretation using pandas dataframe. You are provided with a dataframe represented as a dictionary. Thoroughly analyze this data and provide a comprehensive summary in a single paragraph. The summary should be rich, compact, and concise, capturing all key information and insights from the data. Ensure that no critical details are omitted while keeping the text engaging.
 
@@ -74,8 +76,9 @@ Summary of the data:
 “”"
 
 Please generate the Seaborn code according to the guidelines above.
-'''
-        st.write(api(prompt_vis))
+'''     
+        full_code = inject_variables(api(prompt_vis),var_dict)
+        st.write(full_code))
         break
 else:
     st.write("Please upload a CSV file to proceed.")
