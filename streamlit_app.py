@@ -81,7 +81,7 @@ Summary of the data:
 Please generate the Seaborn code according to the guidelines above.
 '''     
 
-        with st.spinner("Executing code..."):'
+        with st.spinner("Executing code..."):
          generated_code = api(prompt_vis)
          st.code(generated_code,language='Python')
          image_data, error = execute_code_safely(generated_code,var_dict)
