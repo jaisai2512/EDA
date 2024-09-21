@@ -58,7 +58,9 @@ Here is the summary of the data:
         prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
 
 Instructions:
-    1.Use only Seaborn in the code.
+    1.Use only Seaborn for visualization.
+    2.The data is provided in a DataFrame named df.
+    3.Generate Python code only, without explanations.
 Here are the details:
 
 Question, visualization, and reason:
