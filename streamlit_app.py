@@ -81,14 +81,16 @@ Summary of the data:
 Please generate the Seaborn code according to the guidelines above.
 '''     
 
-        with st.spinner("Executing code..."):
-            image_data, error = execute_code_safely(api(prompt_vis),var_dict)
+        with st.spinner("Executing code..."):'
+         generated_code = api(prompt_vis)
+         st.code(generated_code,language='Python')
+         image_data, error = execute_code_safely(generated_code,var_dict)
         if image_data:
-            st.subheader("Execution Output")
-            st.image(image_data, caption="Generated Seaborn Plot")
+         st.subheader("Execution Output")
+         st.image(image_data, caption="Generated Seaborn Plot")
         else:
-            st.subheader("Error")
-            st.error(error)
+         st.subheader("Error")
+         st.error(error)
         break
 else:
     st.write("Please upload a CSV file to proceed.")
