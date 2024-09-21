@@ -65,7 +65,7 @@ Instructions:
     1.Use only Seaborn for visualization.
     2.The data is provided in a DataFrame named df.
     3.Generate Python code only, without explanations.
-    4.Save the graph as an image named output.png in the tmp_dir directory without initializing tmp_dir , Don't do this tmp_dir = .
+    4.Save the graph as an image named output.png in the tmp_dir directory,where the directory path is stored in tmp_dir variable.
 Here are the details:
 
 Question, visualization, and reason:
