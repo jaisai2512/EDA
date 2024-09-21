@@ -3,5 +3,5 @@ streamlit
 openai
 seaborn
 matplotlib
-tempfile
+temp
 os
