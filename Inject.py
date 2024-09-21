@@ -1,3 +1,4 @@
+import pandas as pd
 def inject_variables(code, variables_dict):
     """
     Prepends variable definitions to the generated code.
