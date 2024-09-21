@@ -3,8 +3,6 @@ def execute_code_safely(code,var_dict):
             # Execute the code in a subprocess
             result = exec(code.replace('```python','').replace('```',''),var_dict)
             
-            if result.returncode != 0:
-                return None, f"Error: {result.stderr}"
             
             # Check if 'output.png' was created
             with tempfile.TemporaryDirectory() as tmp_dir:
