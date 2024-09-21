@@ -65,8 +65,7 @@ Instructions:
     1.Use only Seaborn for visualization.
     2.The data is provided in a DataFrame named df.
     3.Generate Python code only, without explanations.
-    4.Save the graph as an image named output.png in the tmp_dir directory, {{tmp_dir}}/output.png .
-    5.Assume tmp_dir is alread initialized.
+    4.Save the graph as an image named output.png in the tmp_dir directory, {{tmp_dir}}/output.png ,While the tmp_dir should be initialized or assigned.
 Here are the details:
 
 Question, visualization, and reason:
