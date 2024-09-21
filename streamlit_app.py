@@ -50,7 +50,12 @@ The output should be in valid JSON format as follows:
 Here is the summary of the data:
 {summary}
 '''
-    prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
+    
+    # Display basic information about the CSV
+    st.write("Basic Information:")
+    data = json.loads(api(prompt_qa))
+    for i in data:
+        prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
 
 Instructions:
     1.Use only Seaborn in the code.
@@ -68,10 +73,6 @@ Summary of the data:
 
 Please generate the Seaborn code according to the guidelines above.
 '''
-    # Display basic information about the CSV
-    st.write("Basic Information:")
-    data = json.loads(api(prompt_qa))
-    for i in data:
         st.write(api(prompt_vis))
         break
 else:
