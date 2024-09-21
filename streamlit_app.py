@@ -70,6 +70,7 @@ Instructions:
      plt.savefig(buf, format='png')
      buf.seek(0)  # Move the cursor to the start of the stream
      return buf
+    5. The above process should be in a form of function calling format.
 Here are the details:
 
 Question, visualization, and reason:
