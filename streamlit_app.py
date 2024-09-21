@@ -88,14 +88,9 @@ Please generate the Seaborn code according to the guidelines above.
         with st.spinner("Executing code..."):
          generated_code = api(prompt_vis)
          st.code(generated_code,language='Python')
-         image_data, error = execute_code_safely(generated_code,var_dict)
-        if image_data:
-         st.subheader("Execution Output")
-         st.image(image_data, caption="Generated Seaborn Plot")
-        else:
-         st.subheader("Error")
-         st.error(error)
-        break
+         plot_buffer = exec(generated_code,var_dict)
+       if plot_buffer:
+        st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
     st.write("Please upload a CSV file to proceed.")
 
