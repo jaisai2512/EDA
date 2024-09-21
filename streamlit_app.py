@@ -64,12 +64,12 @@ Here is the summary of the data:
 Instructions:
     1.Use only Seaborn for visualization.
     2.The data is provided in a DataFrame named df.
-    3.Generate Python code only, without explanations.
-    4.Save the graph and return as below
-     buf = io.BytesIO()
-     plt.savefig(buf, format='png')
-     buf.seek(0)  # Move the cursor to the start of the stream
-     return buf
+    3.Generate only Python code without any explanations or comments.
+    4.After creating the visualization, save the plot as an image and return it in the following format:
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png')
+        buf.seek(0)  # Move the cursor to the start of the stream
+        return buf
     5. The above process should be in a form of function calling format.
 Here are the details:
 
