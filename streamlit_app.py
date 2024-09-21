@@ -3,7 +3,7 @@ from API import api
 import streamlit as st
 import pandas as pd
 import json
-from inject import inject_variables
+from Inject import inject_variables
 
 # Title of the Streamlit app
 st.title("EDA Report Generator")
