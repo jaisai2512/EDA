@@ -53,42 +53,19 @@ Here is the summary of the data:
     st.write("Basic Information:")
     data = json.loads(api(prompt_qa))
     for i in data:
-        prompt_vis = f'''You are a data analyst with coding skills and tasked with writing visualization code based on the provided question, visualization, reason, and summary of the data.
-
-Instructions:
-1. The data is provided in a DataFrame named `df`.
-2. Generate only Python code without explanations or comments.
-3. Do not modify any part of the provided code structure below.
-4. Only use the imported libraries (Altair, Matplotlib, Seaborn) to create the visualization.
-
-Details:
-
-Question, visualization, and reason:
-“”"
-{i}
-“”"
-
-Summary of the data:
-“”"
-{summary}
-“”"
-
-The visualization code should be inserted into the <<stub>> part of the following code:
-
-```python
-import altair as alt
-import matplotlib.pyplot as plt
-import seaborn as sns
-import io
-def plot_and_save(df):
-    <<stub>>
-    # Save the figure to a buffer instead of a file
-    buf = io.BytesIO()
-    plt.savefig(buf, format='png')
-    buf.seek(0)  # Move the cursor to the start of the stream
-    return buf
-
-'''     
+        prompt_vis = f'''You are data analyst , your role is to pick a library that can be used to visualize data based on question ,visualization and reason given a set of libraries
+	The libraries are 
+         1.Seaborn
+	 2.Matplotlib
+         3.altair
+	Question, visualization, and reason:
+	“”"
+	{i}
+	“”"
+	Instruction:
+	1.No comment should be produced.
+        2. Only single library should be answered.
+        '''     
 
         with st.spinner("Executing code..."):
          generated_code = api(prompt_vis)
