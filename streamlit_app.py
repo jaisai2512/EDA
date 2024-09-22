@@ -35,6 +35,9 @@ if uploaded_file is not None:
 5.The visualization should include univariate, bivariate, and multivariate analyses.
 6. Don't generate any comment or anything apart from the json format list.
 
+Here is the summary of the data:
+{summary}
+
 The output should be in valid JSON format as follows:
 
 [
@@ -45,8 +48,7 @@ The output should be in valid JSON format as follows:
     }},
     ...
 ]
-Here is the summary of the data:
-{summary}
+
 '''
     
     # Display basic information about the CSV
@@ -56,7 +58,7 @@ Here is the summary of the data:
         prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
 
 Instructions:
-    1.Use Seaborn and matplotlib for visualization.
+    1.The libaries availabe to you is seaborn and matplotlib,Don't use anything apart than this for visualization.
     2.The data is provided in a DataFrame named df.
     3.Generate only Python code without any explanations or comments.
 Here are the details:
