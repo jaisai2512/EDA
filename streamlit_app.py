@@ -52,7 +52,7 @@ Here is the summary of the data:
     # Display basic information about the CSV
     st.write("Basic Information:")
     data = json.loads(api(prompt_qa))
-    for i in data:    
+    for i in data:
         prompt_vis =f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
 
 Instructions:
@@ -85,15 +85,15 @@ def plot_and_save(df: pd.DataFrame):
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
     return buf'''
-with st.spinner("Executing code..."):
-	generated_code = api(prompt_vis)
-        st.code(generated_code,language='Python')
-        local_vars = {}
-        exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
-        plot_and_save = local_vars['plot_and_save']
-	plot_buffer = plot_and_save(df)
-if plot_buffer:
-        st.image(plot_buffer, caption="Age Chart", use_column_width=True)
+	    with st.spinner("Executing code..."):
+			generated_code = api(prompt_vis)
+        	st.code(generated_code,language='Python')
+        	local_vars = {}
+        	exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
+        	plot_and_save = local_vars['plot_and_save']
+			plot_buffer = plot_and_save(df)
+		if plot_buffer:
+        	st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
     st.write("Please upload a CSV file to proceed.")
 
