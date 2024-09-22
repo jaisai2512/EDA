@@ -84,8 +84,7 @@ def plot_and_save(df: pd.DataFrame):
     buf = io.BytesIO()
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
-    return buf
-'''
+    return buf'''
 	with st.spinner("Executing code..."):
 		generated_code = api(prompt_vis)
         	st.code(generated_code,language='Python')
