@@ -27,15 +27,14 @@ if uploaded_file is not None:
 
     summary = summary_gen(df)
     st.write(summary)
-    prompt_qa = f'''As a data analyst with expertise in interpreting data summaries, your task is to generate insightful questions that help identify patterns based on the provided data using visualizations. Focus specifically on distribution and correlation patterns. Please adhere to the following instructions:
+    prompt_qa = f'''You are  a data analyst with expertise in interpreting data summaries, your task is to generate insightful questions that help identify patterns based on the provided data using visualizations. Focus specifically on distribution and correlation patterns. Please adhere to the following instructions:
 
 	Instruction:	
 	1. Do not generate any code.
-	2. Do not generate tabular columns.
-	3. Only use information obtained from the dictionary provided.
-	4. Only Generate 5 questions.
-	5. Don't generate any comment or anything apart from the json format list.
-	6.The Visualization should not be complex.
+	2. Only use information obtained from the dictionary provided.
+	3. Only Generate 5 questions.
+	4. Don't generate any comment or anything apart from the json format list.
+	5.The Visualization should not be complex.
 
 The output should be in valid JSON format as follows:
 
