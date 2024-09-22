@@ -29,7 +29,7 @@ if uploaded_file is not None:
     st.write(summary)
     prompt_qa = f'''As a data analyst with expertise in interpreting data summaries, your task is to generate insightful questions that help identify patterns based on the provided data using visualizations. Focus specifically on distribution and correlation patterns. Please adhere to the following instructions:
 
-Instruction:	
+	Instruction:	
 	1. Do not generate any code.
 	2. Do not generate tabular columns.
 	3. Only use information obtained from the dictionary provided.
@@ -55,8 +55,6 @@ Here is the summary of the data:
     
     # Display basic information about the CSV
     st.write("Basic Information:")
-    st.write(api(prompt_qa))
-    exit()
     data = json.loads(api(prompt_qa))
     for i in data:
         prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
