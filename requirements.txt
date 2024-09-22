@@ -6,3 +6,4 @@ matplotlib
 temp
 os-sys
 Python-IO
+altair
