@@ -93,10 +93,7 @@ def plot_and_save(df: pd.DataFrame):
          local_vars = {}
          exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
          plot_and_save = local_vars['plot_and_save']
-	try:
-		plot_buffer = plot_and_save(df)
-	except:
-		pass
+	 plot_buffer = plot_and_save(df)
         if plot_buffer:
          st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
