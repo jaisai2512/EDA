@@ -78,7 +78,7 @@ import matplotlib.pyplot as plt
 <imports>
 # solution plan
 # i.  ..
-def plot(df: pd.DataFrame):
+def plot_and_save(df: pd.DataFrame):
 
     <stub> # only modify this section
     buf = io.BytesIO()
