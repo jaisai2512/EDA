@@ -26,14 +26,16 @@ if uploaded_file is not None:
     var_dict = {'df':df}
 
     summary = summary_gen(df)
+    st.write(summary)
     prompt_qa = f'''You are a data analyst with expertise in interpreting data summaries and generating insightful questions to identify patterns in data. Use visualizations to support your analysis and provide meaningful interpretations of the trends. Please adhere to the following instructions:
 
-1. Do not generate any code.
-2. Do not generate tabular columns.
-3. Only use information obtained from the dictionary provided.
-4. Only Generate 5 questions.
-5.The visualization should include univariate, bivariate, and multivariate analyses.
-6. Don't generate any comment or anything apart from the json format list.
+Instruction:
+  1. Do not generate any code.
+  2. Do not generate tabular columns.
+  3. Only use information obtained from the dictionary provided.
+  4. Only Generate 5 questions.
+  5.The visualization should include univariate, bivariate, and multivariate analyses.
+  6. Don't generate any comment or anything apart from the json format list.
 
 The output should be in valid JSON format as follows:
 
