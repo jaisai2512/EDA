@@ -35,8 +35,7 @@ Instruction:
 	3. Only use information obtained from the dictionary provided.
 	4. Only Generate 5 questions.
 	5. Don't generate any comment or anything apart from the json format list.
-	6. The questions, visualization and reason should only be produced when the visualization can be achieved using seaborn and matplotlib.
-	7.The Visualization should not be complex.
+	6.The Visualization should not be complex.
 
 The output should be in valid JSON format as follows:
 
