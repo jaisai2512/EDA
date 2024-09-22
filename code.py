@@ -61,4 +61,5 @@ def plot(df: pd.DataFrame):
     return buf
 chart = plot(df) # data already contains the data to be plotted.  Always include this line. No additional code beyond this line..
 """
-          return template, instructions
+                
+        return template, instructions
