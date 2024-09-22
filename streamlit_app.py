@@ -35,9 +35,6 @@ if uploaded_file is not None:
 5.The visualization should include univariate, bivariate, and multivariate analyses.
 6. Don't generate any comment or anything apart from the json format list.
 
-Here is the summary of the data:
-{summary}
-
 The output should be in valid JSON format as follows:
 
 [
@@ -49,6 +46,8 @@ The output should be in valid JSON format as follows:
     ...
 ]
 
+Here is the summary of the data:
+{summary}
 '''
     
     # Display basic information about the CSV
