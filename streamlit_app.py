@@ -53,7 +53,7 @@ Here is the summary of the data:
     st.write("Basic Information:")
     data = json.loads(api(prompt_qa))
     for i in data:    
-        prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
+        prompt_vis =f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
 
 Instructions:
     1.The data is provided in a DataFrame named df.
@@ -85,8 +85,7 @@ def plot_and_save(df: pd.DataFrame):
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
     return buf
-        '''     
-
+        '''      
 	with st.spinner("Executing code..."):
 		generated_code = api(prompt_vis)
         	st.code(generated_code,language='Python')
