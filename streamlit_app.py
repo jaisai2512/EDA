@@ -79,9 +79,10 @@ The visualization code should be generated in the <<stub>> part in the below cod
 
 ```python
 import altair as alt
+import matplotlib.pyplot
+import seaborn as sns
 import io
 def plot_and_save(df):
-    
     <<stub>>
     # Save the figure to a buffer instead of a file
     buf = io.BytesIO()
