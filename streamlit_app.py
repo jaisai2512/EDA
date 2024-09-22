@@ -27,15 +27,16 @@ if uploaded_file is not None:
 
     summary = summary_gen(df)
     st.write(summary)
-    prompt_qa = f'''You are a data analyst with expertise in interpreting data summaries and generating insightful questions to identify patterns in data. Use visualizations to support your analysis and provide meaningful interpretations of the trends. Please adhere to the following instructions:
+    prompt_qa = f'''As a data analyst with expertise in interpreting data summaries, your task is to generate insightful questions that help identify patterns based on the provided data using visualizations. Focus specifically on distribution and correlation patterns. Please adhere to the following instructions:
 
-Instruction:
-  1. Do not generate any code.
-  2. Do not generate tabular columns.
-  3. Only use information obtained from the dictionary provided.
-  4. Only Generate 5 questions.
-  5.The visualization should include univariate, bivariate, and multivariate analyses.
-  6. Don't generate any comment or anything apart from the json format list.
+Instruction:	
+	1. Do not generate any code.
+	2. Do not generate tabular columns.
+	3. Only use information obtained from the dictionary provided.
+	4. Only Generate 5 questions.
+	5. Don't generate any comment or anything apart from the json format list.
+	6. The questions, visualization and reason should only be produced when the visualization can be achieved using seaborn and matplotlib.
+	7.The Visualization should not be complex.
 
 The output should be in valid JSON format as follows:
 
@@ -48,6 +49,7 @@ The output should be in valid JSON format as follows:
     ...
 ]
 
+
 Here is the summary of the data:
 {summary}
 '''
@@ -56,11 +58,12 @@ Here is the summary of the data:
     st.write("Basic Information:")
     data = json.loads(api(prompt_qa))
     for i in data:
-        prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
+        prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
 
 Instructions:
     1.The data is provided in a DataFrame named df.
     2.Generate only Python code without any explanations or comments.
+    3.Do not modify any part of the provided code structure below 
 Here are the details:
 
 Question, visualization, and reason:
@@ -73,13 +76,12 @@ Summary of the data:
 {summary}
 “”"
 
-Libaries available for visualization:
- 1.Matplotlib
- 2.Seaborn
  
 The visualization code should be generated in the <<stub>> part in the below code.
 
-
+```python
+import altair as alt
+import io
 def plot_and_save(df):
     
     <<stub>>
@@ -88,9 +90,6 @@ def plot_and_save(df):
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
     return buf
-
-
-Please generate the Seaborn code according to the guidelines above.
 '''     
 
         with st.spinner("Executing code..."):
