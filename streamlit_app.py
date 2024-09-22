@@ -57,9 +57,8 @@ Here is the summary of the data:
         prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, and reason, given a summary of the data.
 
 Instructions:
-    1.The libaries availabe to you is seaborn and matplotlib,Don't use anything apart than this for visualization.
-    2.The data is provided in a DataFrame named df.
-    3.Generate only Python code without any explanations or comments.
+    1.The data is provided in a DataFrame named df.
+    2.Generate only Python code without any explanations or comments.
 Here are the details:
 
 Question, visualization, and reason:
@@ -71,7 +70,13 @@ Summary of the data:
 “”"
 {summary}
 “”"
+
+Libaries available for visualization:
+ 1.Matplotlib
+ 2.Seaborn
+ 
 The visualization code should be generated in the <<stub>> part in the below code.
+
 
 def plot_and_save(df):
     
