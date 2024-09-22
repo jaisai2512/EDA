@@ -53,13 +53,15 @@ Here is the summary of the data:
     st.write("Basic Information:")
     data = json.loads(api(prompt_qa))
     for i in data:
-        prompt_vis = f'''You are a data analyst with coding skills and you are tasked to write a visualization code based on the provided question, visualization, reason and summary of the data
+        prompt_vis = f'''You are a data analyst with coding skills and tasked with writing visualization code based on the provided question, visualization, reason, and summary of the data.
 
 Instructions:
-    1.The data is provided in a DataFrame named df.
-    2.Generate only Python code without any explanations or comments.
-    3.Do not modify any part of the provided code structure below 
-Here are the details:
+1. The data is provided in a DataFrame named `df`.
+2. Generate only Python code without explanations or comments.
+3. Do not modify any part of the provided code structure below.
+4. Only use the imported libraries (Altair, Matplotlib, Seaborn) to create the visualization.
+
+Details:
 
 Question, visualization, and reason:
 “”"
@@ -71,12 +73,11 @@ Summary of the data:
 {summary}
 “”"
 
- 
-The visualization code should be generated in the <<stub>> part in the below code.
+The visualization code should be inserted into the <<stub>> part of the following code:
 
 ```python
 import altair as alt
-import matplotlib.pyplot
+import matplotlib.pyplot as plt
 import seaborn as sns
 import io
 def plot_and_save(df):
@@ -86,6 +87,7 @@ def plot_and_save(df):
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
     return buf
+
 '''     
 
         with st.spinner("Executing code..."):
