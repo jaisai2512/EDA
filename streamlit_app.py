@@ -41,7 +41,7 @@ if uploaded_file is not None:
 2. Do not generate tabular columns.
 3. Only use information obtained from the dictionary provided.
 4. Only Generate 5 questions.
-5. The visualization should be a single graph, not a combination or multiple graphs.
+5.The visualization should include univariate, bivariate, and multivariate analyses.
 
 The output should be in valid JSON format as follows:
 
