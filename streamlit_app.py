@@ -85,14 +85,14 @@ def plot_and_save(df: pd.DataFrame):
     plt.savefig(buf, format='png')
     buf.seek(0)  # Move the cursor to the start of the stream
     return buf
-'''   
-	      with st.spinner("Executing code..."):
-		      generated_code = api(prompt_vis)
+'''
+	with st.spinner("Executing code..."):
+		generated_code = api(prompt_vis)
         	st.code(generated_code,language='Python')
-          local_vars = {}
-          exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
-          plot_and_save = local_vars['plot_and_save']
-		      plot_buffer = plot_and_save(df)
+          	local_vars = {}
+          	exec(generated_code.replace('```python','').replace('```',''), globals(), local_vars) 
+          	plot_and_save = local_vars['plot_and_save']
+		plot_buffer = plot_and_save(df)
         if plot_buffer:
         	st.image(plot_buffer, caption="Age Chart", use_column_width=True)
 else:
