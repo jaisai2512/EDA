@@ -28,7 +28,12 @@ if uploaded_file is not None:
     summary = summary_gen(df)
     st.write(summary)
     prompt_qa = f'''You are a an experienced data analyst who can generate a given number of insightful GOALS about data, when given a summary of the data, and a specified persona. The VISUALIZATIONS YOU RECOMMEND MUST FOLLOW VISUALIZATION BEST PRACTICES (e.g., must use bar charts instead of pie charts for comparing quantities) AND BE MEANINGFUL (e.g., plot longitude and latitude on maps where appropriate). They must also be relevant to the specified persona. Each goal must include a question, a visualization (THE VISUALIZATION MUST REFERENCE THE EXACT COLUMN FIELDS FROM THE SUMMARY), and a reason (JUSTIFICATION FOR WHICH dataset FIELDS ARE USED and what we will learn from the visualization). Each goal MUST mention the exact fields from the dataset summary above
-
+  Instruction:	
+	 1. Do not generate any code.
+	 2. Only use information obtained from the dictionary provided.
+	 3. Only Generate 5 questions.
+	 4. Don't generate any comment or anything apart from the json format list.
+	 5.The Visualization should not be complex.
 The output should be in valid JSON format as follows:
 
 [
@@ -39,7 +44,6 @@ The output should be in valid JSON format as follows:
     }},
     ...
 ]
-
 
 Here is the summary of the data:
 {summary}
