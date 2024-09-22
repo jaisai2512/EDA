@@ -42,6 +42,7 @@ if uploaded_file is not None:
 3. Only use information obtained from the dictionary provided.
 4. Only Generate 5 questions.
 5.The visualization should include univariate, bivariate, and multivariate analyses.
+6. Don't generate any comment or anything apart from the json format list.
 
 The output should be in valid JSON format as follows:
 
