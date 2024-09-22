@@ -16,7 +16,6 @@ import pandas as pd
 # plan -
 def plot(df: pd.DataFrame):
     <stub> # only modify this section
-    plt.title('{goal.question}', wrap=True)
     return plt;
 
 chart = plot(df) # data already contains the data to be plotted. Always include this line. No additional code beyond this line."""
@@ -36,7 +35,6 @@ import matplotlib.pyplot as plt
 def plot(df: pd.DataFrame):
 
     <stub> # only modify this section
-    plt.title('{goal.question}', wrap=True)
     return plt;
 
 chart = plot(df) # data already contains the data to be plotted. Always include this line. No additional code beyond this line."""
